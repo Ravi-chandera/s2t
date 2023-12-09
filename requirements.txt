@@ -8,4 +8,5 @@ sentencepiece
 speech
 sox
 sounddevice==0.4.2
+PortAudio
 
