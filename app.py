@@ -3,6 +3,7 @@ import torchaudio
 from transformers import Speech2TextProcessor, Speech2TextForConditionalGeneration
 import soundfile as sf
 import librosa
+import sounddevice as sd
 
 # Define the model and processor
 model = Speech2TextForConditionalGeneration.from_pretrained("facebook/s2t-small-librispeech-asr")
@@ -22,7 +23,8 @@ def main():
     if recording:
         st.warning("Recording... Speak into your microphone.")
         with st.spinner("Recording..."):
-            audio_data, sampling_rate = torchaudio.recorder.record(10, 16000, channels=1)
+            audio_data, sampling_rate = sd.rec(int(10 * 16000), samplerate=16000, channels=1, dtype="int16")
+
         st.success("Recording complete!")
 
         # Convert audio to text
