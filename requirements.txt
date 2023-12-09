@@ -1,6 +1,6 @@
-numpy==1.19
+numpy==1.19.5  # or an older version that doesn't rely on the problematic Cython version
+librosa==0.8.1
 streamlit==1.22.0
 torchaudio==0.9.0
 transformers==4.10.0
-librosa>=0.8.1,<0.9.0
 soundfile==0.10.3.post1
