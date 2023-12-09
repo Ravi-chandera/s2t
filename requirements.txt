@@ -7,4 +7,5 @@ soundfile==0.10.3.post1
 sentencepiece
 speech
 sox
+sounddevice==0.4.2
 
